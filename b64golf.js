@@ -15,4 +15,4 @@ const b64Encode = str => str.split('')
   .map(b => alphabet[parseInt(parseInt(b + '0'.repeat(6 - b.length), 10), 2)])
   // Join the Base64 characters to produce encoded string
   // Pad with '=' if string length isn't a multiple of 4
-  .reduce((s, c, i, a) => s + c + ((i !== a.length - 1) ? '' : '='.repeat((Math.ceil((s + c).length / 4) * 4) - (s + c).length)));
+  .reduce((s, c, i, a) => (s += c) + ((i !== a.length - 1) ? '' : '='.repeat((Math.ceil(s.length / 4) * 4) - s.length)));
