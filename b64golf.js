@@ -4,7 +4,8 @@ const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
 // Transform input string into array of chars
 const b64Encode = str => str.split('')
   // Map character bytes to 8-bit binary values
-  .map(c => ('000000000' + c.charCodeAt(0).toString(2)).substr(-8))
+  // unescape(encodeURIComponent(c)).split('') allows us to correctly handle multibyte characters
+  .map(c => unescape(encodeURIComponent(c)).split('').map(c => ('000000000' + c.charCodeAt(0).toString(2)).substr(-8)).join(''))
   // Join 8-bit binary values to produce binary string
   .join('')
   // Split binary string out into 6-bit values
