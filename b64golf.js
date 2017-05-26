@@ -1,5 +1,5 @@
 // Generate Base64 alphabet lookup table
-const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'.split('');
+const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
 
 // Transform input string into array of chars
 const b64Encode = str => str.split('')
