@@ -14,5 +14,6 @@ const b64Encode = str => [...str]
   // Make sure to pad with zeroes if we have less than 6 bits
   .map(b => alphabet[parseInt(parseInt(b.padEnd(6, 0), 10), 2)])
   // Join the Base64 characters to produce encoded string
+  .join('')
   // Pad with '=' if string length isn't a multiple of 4
-  .reduce((s, c, i, a) => (s += c) + ((i !== a.length - 1) ? '' : '='.repeat((Math.ceil(s.length / 4) * 4) - s.length)));
+  .match(/.{1,4}/g).map(c => c.padEnd(4, '=')).join('');
