@@ -1,4 +1,4 @@
-// Base64 alphabet lookup table
+// Base64 alphabet
 const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
 
 // Transform input string into array of chars
