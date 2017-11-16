@@ -5,7 +5,7 @@ const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789
 const b64Encode = str => [...str]
   // Map character bytes to 8-bit binary values
   // Mapping to unescape(encodeURIComponent(c)) first is necessary to handle multibyte characters
-  .map(c => [...unescape(encodeURIComponent(c))].map(c => c.charCodeAt(0).toString(2).padStart(8, 0)).join(''))
+  .map(c => [...unescape(encodeURIComponent(c))].map(c => c.charCodeAt().toString(2).padStart(8, 0)).join(''))
   // Join 8-bit binary values to produce binary string
   .join('')
   // Split binary string out into 6-bit values
